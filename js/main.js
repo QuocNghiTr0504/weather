@@ -12,7 +12,6 @@ async function changeWeather() {
     let urlApi = `https://api.openweathermap.org/data/2.5/weather?q=${capitalSearch}&appid=fc730cbdda10d67a07193fc7576c3223`;
     let data = await fetch(urlApi).then(res => res.json());
     if (data.cod === 200) {
-        console.log(data);
         country.innerText = data.sys.country
         eye.innerText = data.visibility + '(m)'
         city.innerText = data.name
